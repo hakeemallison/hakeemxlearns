@@ -40,7 +40,7 @@ export function Showcase() {
         </div>
 
         {/* Main showcase */}
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-[32px] overflow-hidden shadow-2xl">
+        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-[32px] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-white/5 hover:scale-[1.02] hover:border-white/30">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Image side */}
             <div className="relative h-[400px] lg:h-[600px] overflow-hidden">
@@ -68,9 +68,7 @@ export function Showcase() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onHoverStart={() => console.log("[v0] Showcase button hover started")}
-                onHoverEnd={() => console.log("[v0] Showcase button hover ended")}
-                className="group w-fit rounded-2xl px-6 py-6 bg-white text-black font-semibold transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30 transform-gpu"
+                className="group w-fit rounded-2xl px-6 py-6 bg-white text-black font-semibold transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30"
               >
                 <span className="flex items-center gap-2">
                   View Project

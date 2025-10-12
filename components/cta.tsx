@@ -7,7 +7,7 @@ export function CTA() {
   return (
     <section className="py-24 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2.5rem] p-12 md:p-16 overflow-hidden shadow-2xl">
+        <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2.5rem] p-12 md:p-16 overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-white/5 hover:scale-[1.02] hover:border-white/20">
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/3 rounded-full blur-3xl" />
@@ -24,9 +24,7 @@ export function CTA() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onHoverStart={() => console.log("[v0] CTA primary button hover started")}
-                onHoverEnd={() => console.log("[v0] CTA primary button hover ended")}
-                className="group rounded-2xl px-8 py-6 text-lg font-semibold bg-white text-black transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30 transform-gpu"
+                className="group rounded-2xl px-8 py-6 text-lg font-semibold bg-white text-black transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30"
               >
                 <span className="flex items-center gap-2">
                   Get Started
@@ -37,9 +35,7 @@ export function CTA() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onHoverStart={() => console.log("[v0] CTA secondary button hover started")}
-                onHoverEnd={() => console.log("[v0] CTA secondary button hover ended")}
-                className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-xl bg-white/10 border border-white/20 text-white transition-all duration-300 hover:bg-white/20 transform-gpu"
+                className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-xl bg-white/10 border border-white/20 text-white transition-all duration-300 hover:bg-white/20"
               >
                 <span className="flex items-center gap-2">
                   <Bell className="w-5 h-5" />
