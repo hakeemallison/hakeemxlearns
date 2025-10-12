@@ -68,7 +68,9 @@ export function Showcase() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group w-fit rounded-2xl px-6 py-6 bg-white text-black font-semibold transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30"
+                onHoverStart={() => console.log("[v0] Showcase button hover started")}
+                onHoverEnd={() => console.log("[v0] Showcase button hover ended")}
+                className="group w-fit rounded-2xl px-6 py-6 bg-white text-black font-semibold transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30 transform-gpu"
               >
                 <span className="flex items-center gap-2">
                   View Project
