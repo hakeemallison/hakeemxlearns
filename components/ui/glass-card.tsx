@@ -1,6 +1,7 @@
 "use client"
 import { type ReactNode, useState } from "react"
 import { cn } from "@/lib/utils"
+import { GLASS_STYLES } from "@/lib/design-system"
 
 interface GlassCardProps {
   children: ReactNode
@@ -21,9 +22,9 @@ export function GlassCard({ children, className, enableHover = true, rounded = "
   return (
     <div
       className={cn(
-        "backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 shadow-2xl",
+        GLASS_STYLES.card.base,
         roundedClasses[rounded],
-        enableHover && "transition-all duration-500 hover:shadow-white/5 hover:scale-[1.02] hover:border-white/20",
+        enableHover && `${GLASS_STYLES.card.transition} ${GLASS_STYLES.card.hover}`,
         className,
       )}
       onMouseEnter={() => enableHover && setIsHovered(true)}

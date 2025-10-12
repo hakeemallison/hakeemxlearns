@@ -2,6 +2,7 @@
 
 import type { LucideIcon } from "lucide-react"
 import { useState } from "react"
+import { GLASS_STYLES, DURATIONS } from "@/lib/design-system"
 
 interface FeatureCardProps {
   icon: LucideIcon
@@ -18,9 +19,13 @@ export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="h-full backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-white/20">
+      <div
+        className={`h-full ${GLASS_STYLES.card.base} rounded-3xl p-8 ${GLASS_STYLES.card.transition} ${GLASS_STYLES.card.hover}`}
+      >
         {/* Icon container */}
-        <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-3 mb-6 transition-all duration-500 group-hover:bg-white/20 group-hover:scale-110 flex items-center justify-center">
+        <div
+          className={`w-14 h-14 ${GLASS_STYLES.iconContainer.base} p-3 mb-6 ${GLASS_STYLES.iconContainer.transition} ${GLASS_STYLES.iconContainer.hover} flex items-center justify-center`}
+        >
           <Icon className="w-full h-full text-white" />
         </div>
 
@@ -30,7 +35,7 @@ export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps
 
         {/* Hover effect line */}
         <div
-          className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-white/40 to-transparent transition-all duration-500 rounded-b-3xl ${
+          className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-white/40 to-transparent transition-all duration-${DURATIONS.normal} rounded-b-3xl ${
             isHovered ? "w-full" : "w-0"
           }`}
         />
