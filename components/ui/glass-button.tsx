@@ -1,16 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 import { ANIMATIONS, GLASS_STYLES } from "@/lib/design-system"
-
-interface GlassButtonProps {
-  children: ReactNode
-  variant?: "primary" | "secondary"
-  className?: string
-  onClick?: () => void
-}
+import type { GlassButtonProps } from "@/types/components"
 
 export function GlassButton({ children, variant = "primary", className, onClick }: GlassButtonProps) {
   return (

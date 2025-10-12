@@ -1,14 +1,7 @@
 "use client"
-
-import type { LucideIcon } from "lucide-react"
 import { useState } from "react"
 import { GLASS_STYLES, DURATIONS } from "@/lib/design-system"
-
-interface FeatureCardProps {
-  icon: LucideIcon
-  title: string
-  description: string
-}
+import type { FeatureCardProps } from "@/types/components"
 
 export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   const [isHovered, setIsHovered] = useState(false)

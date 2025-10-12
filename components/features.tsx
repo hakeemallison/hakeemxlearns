@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Network, Video, FileText, GitBranch, Database, Cloud } from "lucide-react"
 import { FeatureCard } from "@/components/ui/feature-card"
 import { SectionHeader } from "@/components/ui/section-header"
+import type { FeatureItem } from "@/types/components"
 
-const features = [
+const features: FeatureItem[] = [
   {
     icon: Network,
     title: "Systems Diagrams",

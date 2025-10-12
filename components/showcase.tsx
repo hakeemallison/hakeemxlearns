@@ -5,8 +5,9 @@ import { ChevronRight } from "lucide-react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { SectionHeader } from "@/components/ui/section-header"
+import type { ProjectItem } from "@/types/components"
 
-const projects = [
+const projects: ProjectItem[] = [
   {
     title: "Immersive Experience",
     category: "Web Design",

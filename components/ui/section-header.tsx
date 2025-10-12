@@ -1,10 +1,5 @@
 import { cn } from "@/lib/utils"
-
-interface SectionHeaderProps {
-  title: string
-  subtitle?: string
-  className?: string
-}
+import type { SectionHeaderProps } from "@/types/components"
 
 export function SectionHeader({ title, subtitle, className }: SectionHeaderProps) {
   return (

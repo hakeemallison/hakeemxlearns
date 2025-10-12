@@ -1,14 +1,8 @@
 "use client"
-import { type ReactNode, useState } from "react"
+import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { GLASS_STYLES } from "@/lib/design-system"
-
-interface GlassCardProps {
-  children: ReactNode
-  className?: string
-  enableHover?: boolean
-  rounded?: "default" | "large" | "xl"
-}
+import type { GlassCardProps } from "@/types/components"
 
 export function GlassCard({ children, className, enableHover = true, rounded = "default" }: GlassCardProps) {
   const [isHovered, setIsHovered] = useState(false)
