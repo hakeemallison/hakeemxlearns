@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { Network, Video, FileText, GitBranch, Database, Cloud } from "lucide-react"
-import { useState } from "react"
+import { FeatureCard } from "@/components/ui/feature-card"
+import { SectionHeader } from "@/components/ui/section-header"
 
 const features = [
   {
@@ -41,52 +42,18 @@ const features = [
 ]
 
 export function Features() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-
   return (
     <section className="py-24 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance text-white">
-            Learn Through Multiple Formats
-          </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto text-balance">
-            Systems design content tailored for solutions architects and engineers
-          </p>
-        </div>
+        <SectionHeader
+          title="Learn Through Multiple Formats"
+          subtitle="Systems design content tailored for solutions architects and engineers"
+        />
 
-        {/* Features grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {features.map((feature, index) => {
-            const Icon = feature.icon
-            return (
-              <div
-                key={index}
-                className="group relative"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <div className="h-full backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-white/20">
-                  {/* Icon container */}
-                  <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-3 mb-6 transition-all duration-500 group-hover:bg-white/20 group-hover:scale-110 flex items-center justify-center">
-                    <Icon className="w-full h-full text-white" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
-                  <p className="text-white/60 leading-relaxed">{feature.description}</p>
-
-                  {/* Hover effect line */}
-                  <div
-                    className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-white/40 to-transparent transition-all duration-500 rounded-b-3xl ${
-                      hoveredIndex === index ? "w-full" : "w-0"
-                    }`}
-                  />
-                </div>
-              </div>
-            )
-          })}
+          {features.map((feature, index) => (
+            <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} />
+          ))}
         </div>
 
         {/* Explore button */}

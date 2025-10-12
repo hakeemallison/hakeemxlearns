@@ -2,7 +2,9 @@
 
 import { useState } from "react"
 import { ChevronRight } from "lucide-react"
-import { motion } from "framer-motion"
+import { GlassCard } from "@/components/ui/glass-card"
+import { GlassButton } from "@/components/ui/glass-button"
+import { SectionHeader } from "@/components/ui/section-header"
 
 const projects = [
   {
@@ -31,16 +33,9 @@ export function Showcase() {
   return (
     <section className="py-24 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance text-white">Product Lineup</h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto text-balance">
-            Discover our latest work and innovations
-          </p>
-        </div>
+        <SectionHeader title="Product Lineup" subtitle="Discover our latest work and innovations" />
 
-        {/* Main showcase */}
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-[32px] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-white/5 hover:scale-[1.02] hover:border-white/30">
+        <GlassCard rounded="xl" className="overflow-hidden" enableHover={true}>
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Image side */}
             <div className="relative h-[400px] lg:h-[600px] overflow-hidden">
@@ -65,16 +60,12 @@ export function Showcase() {
               </h3>
               <p className="text-lg text-white/60 mb-8 leading-relaxed">{projects[activeIndex].description}</p>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group w-fit rounded-2xl px-6 py-6 bg-white text-black font-semibold transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30"
-              >
+              <GlassButton variant="primary" className="w-fit">
                 <span className="flex items-center gap-2">
                   View Project
                   <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
-              </motion.button>
+              </GlassButton>
 
               <div className="flex gap-3 mt-12 pt-8 border-t border-white/10">
                 {projects.map((_, index) => (
@@ -90,7 +81,7 @@ export function Showcase() {
               </div>
             </div>
           </div>
-        </div>
+        </GlassCard>
       </div>
     </section>
   )

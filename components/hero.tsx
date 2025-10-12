@@ -1,12 +1,10 @@
 "use client"
 
 import { ArrowRight, BookOpen } from "lucide-react"
-import { useState } from "react"
-import { motion } from "framer-motion"
+import { GlassCard } from "@/components/ui/glass-card"
+import { GlassButton } from "@/components/ui/glass-button"
 
 export function Hero() {
-  const [isHovered, setIsHovered] = useState(false)
-
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       {/* Floating orbs */}
@@ -17,12 +15,7 @@ export function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
-        {/* Glass card container */}
-        <div
-          className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[2rem] p-12 md:p-16 shadow-2xl transition-all duration-500 hover:shadow-white/5 hover:scale-[1.02] hover:border-white/20"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+        <GlassCard className="p-12 md:p-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 transition-all duration-300 hover:bg-white/20 hover:scale-105">
             <BookOpen className="w-4 h-4 text-white" />
             <span className="text-sm font-medium text-white">Systems Design & Architecture</span>
@@ -39,26 +32,15 @@ export function Hero() {
             tutorials, and technical insights.
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative overflow-hidden rounded-2xl px-8 py-6 text-lg font-semibold bg-white text-black transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30"
-            >
-              <span className="relative z-10 flex items-center gap-2">
+            <GlassButton variant="primary">
+              <span className="flex items-center gap-2">
                 Explore Content
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
-            </motion.button>
+            </GlassButton>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-xl bg-white/10 border border-white/20 text-white transition-all duration-300 hover:bg-white/20"
-            >
-              About Hakeem
-            </motion.button>
+            <GlassButton variant="secondary">About Hakeem</GlassButton>
           </div>
 
           <div className="grid grid-cols-3 gap-8 mt-16 pt-12 border-t border-white/10">
@@ -73,7 +55,7 @@ export function Hero() {
               </div>
             ))}
           </div>
-        </div>
+        </GlassCard>
       </div>
     </section>
   )
