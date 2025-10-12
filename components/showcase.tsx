@@ -33,8 +33,8 @@ export function Showcase() {
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Product Lineup</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance text-white">Product Lineup</h2>
+          <p className="text-xl text-white/60 max-w-2xl mx-auto text-balance">
             Discover our latest work and innovations
           </p>
         </div>
