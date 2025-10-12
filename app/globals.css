@@ -3,32 +3,116 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================
+   HAKEEMXLEARNS DESIGN SYSTEM
+   Carbon-textured, monochromatic aesthetic
+   ============================================ */
+
 :root {
+  /* ========== COLOR SYSTEM ========== */
+  /* Base Colors - Dark carbon theme */
   --background: oklch(0.12 0.01 240);
   --foreground: oklch(0.98 0.01 240);
+
+  /* Surface Colors - Glassmorphic cards */
   --card: oklch(0.18 0.015 240 / 0.4);
   --card-foreground: oklch(0.98 0.01 240);
+  --card-hover: oklch(0.22 0.015 240 / 0.5);
+
+  /* Popover & Dropdown */
   --popover: oklch(0.15 0.015 240);
   --popover-foreground: oklch(0.98 0.01 240);
+
+  /* Primary - White for main actions */
   --primary: oklch(0.98 0.01 240);
   --primary-foreground: oklch(0.12 0.01 240);
+
+  /* Secondary - Subtle gray surfaces */
   --secondary: oklch(0.22 0.015 240);
   --secondary-foreground: oklch(0.98 0.01 240);
+
+  /* Muted - Subdued text and backgrounds */
   --muted: oklch(0.25 0.015 240);
   --muted-foreground: oklch(0.65 0.01 240);
+
+  /* Accent - Highlighted elements */
   --accent: oklch(0.35 0.015 240);
   --accent-foreground: oklch(0.98 0.01 240);
+
+  /* Icon Backgrounds - Gray rounded squares */
+  --icon-background: oklch(0.3 0.015 240);
+  --icon-foreground: oklch(0.98 0.01 240);
+
+  /* Destructive - Error states */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0.01 240);
+
+  /* Borders & Inputs */
   --border: oklch(0.28 0.015 240 / 0.3);
+  --border-hover: oklch(0.4 0.015 240 / 0.5);
   --input: oklch(0.28 0.015 240 / 0.3);
   --ring: oklch(0.65 0.01 240);
+
+  /* Chart Colors - Monochromatic scale */
   --chart-1: oklch(0.65 0.01 240);
   --chart-2: oklch(0.6 0.01 240);
   --chart-3: oklch(0.55 0.01 240);
   --chart-4: oklch(0.5 0.01 240);
   --chart-5: oklch(0.45 0.01 240);
-  --radius: 1.25rem;
+
+  /* ========== SPACING SYSTEM ========== */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+
+  /* ========== BORDER RADIUS ========== */
+  --radius: 1.25rem; /* 20px - Apple-inspired rounded corners */
+  --radius-sm: 0.75rem; /* 12px - Small components */
+  --radius-md: 1rem; /* 16px - Medium components */
+  --radius-lg: 1.25rem; /* 20px - Large cards */
+  --radius-xl: 1.5rem; /* 24px - Hero sections */
+  --radius-icon: 1rem; /* 16px - Icon containers */
+
+  /* ========== SHADOWS ========== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.1);
+  --shadow-glow-hover: 0 0 40px rgba(255, 255, 255, 0.2);
+
+  /* ========== TRANSITIONS ========== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ========== TYPOGRAPHY ========== */
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-serif: "Source Serif 4", "Source Serif 4 Fallback";
+
+  /* Font Sizes */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 3.75rem; /* 60px */
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  /* ========== SIDEBAR ========== */
   --sidebar: oklch(0.15 0.015 240);
   --sidebar-foreground: oklch(0.98 0.01 240);
   --sidebar-primary: oklch(0.98 0.01 240);
@@ -37,15 +121,25 @@
   --sidebar-accent-foreground: oklch(0.98 0.01 240);
   --sidebar-border: oklch(0.28 0.015 240 / 0.3);
   --sidebar-ring: oklch(0.65 0.01 240);
+
+  /* ========== GLASSMORPHISM ========== */
+  --glass-background: oklch(0.18 0.015 240 / 0.4);
+  --glass-border: oklch(0.28 0.015 240 / 0.3);
+  --glass-backdrop-blur: 12px;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Font Families */
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-serif: "Source Serif 4", "Source Serif 4 Fallback";
+
+  /* Color Mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-card-hover: var(--card-hover);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
@@ -56,9 +150,12 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-icon-background: var(--icon-background);
+  --color-icon-foreground: var(--icon-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
@@ -66,10 +163,14 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+
+  /* Radius Mappings */
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar Mappings */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -84,8 +185,10 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    /* Carbon fiber texture background */
     background-image: repeating-linear-gradient(
         45deg,
         transparent,
@@ -105,6 +208,7 @@
   }
 }
 
+/* ========== ANIMATIONS ========== */
 @keyframes float {
   0%,
   100% {
@@ -118,17 +222,74 @@
 @keyframes glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-glow);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-glow-hover);
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation Utilities */
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+/* ========== UTILITY CLASSES ========== */
+/* Glassmorphic effect */
+.glass {
+  background: var(--glass-background);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--glass-backdrop-blur));
+}
+
+/* Icon container styling */
+.icon-container {
+  background: var(--icon-background);
+  color: var(--icon-foreground);
+  border-radius: var(--radius-icon);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.icon-container:hover {
+  background: var(--accent);
+  transform: scale(1.05);
 }
