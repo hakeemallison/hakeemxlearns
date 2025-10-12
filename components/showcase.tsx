@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
 
 const projects = [
   {
@@ -40,7 +40,7 @@ export function Showcase() {
         </div>
 
         {/* Main showcase */}
-        <div className="backdrop-blur-xl bg-card border border-border rounded-[2.5rem] overflow-hidden shadow-2xl">
+        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-[32px] overflow-hidden shadow-2xl">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Image side */}
             <div className="relative h-[400px] lg:h-[600px] overflow-hidden">
@@ -49,34 +49,40 @@ export function Showcase() {
                 alt={projects[activeIndex].title}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
               <div className="absolute top-6 left-6">
-                <span className="px-4 py-2 rounded-full bg-accent backdrop-blur-sm text-accent-foreground text-sm font-medium">
+                <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium border border-white/20">
                   {projects[activeIndex].category}
                 </span>
               </div>
             </div>
 
             {/* Content side */}
-            <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{projects[activeIndex].title}</h3>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{projects[activeIndex].description}</p>
+            <div className="p-8 md:p-12 flex flex-col justify-center bg-white/5">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-white">
+                {projects[activeIndex].title}
+              </h3>
+              <p className="text-lg text-white/60 mb-8 leading-relaxed">{projects[activeIndex].description}</p>
 
-              <Button className="group w-fit rounded-2xl px-6 py-6 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group w-fit rounded-2xl px-6 py-6 bg-white text-black font-semibold transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30"
+              >
                 <span className="flex items-center gap-2">
                   View Project
                   <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
-              </Button>
+              </motion.button>
 
-              <div className="flex gap-3 mt-12 pt-8 border-t border-border/50">
+              <div className="flex gap-3 mt-12 pt-8 border-t border-white/10">
                 {projects.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     className={`h-2 rounded-full transition-all duration-300 ${
-                      index === activeIndex ? "w-12 bg-accent" : "w-2 bg-muted hover:bg-muted-foreground"
+                      index === activeIndex ? "w-12 bg-white/60" : "w-2 bg-white/20 hover:bg-white/40"
                     }`}
                     aria-label={`View project ${index + 1}`}
                   />

@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
 import { ArrowRight, Bell } from "lucide-react"
 
 export function CTA() {
@@ -21,26 +21,27 @@ export function CTA() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                size="lg"
-                className="group rounded-2xl px-8 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/30"
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group rounded-2xl px-8 py-6 text-lg font-semibold bg-white text-black transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:shadow-white/30"
               >
                 <span className="flex items-center gap-2">
                   Get Started
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
-              </Button>
+              </motion.button>
 
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-sm bg-white/5 border-white/20 text-white transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:border-white/30"
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-xl bg-white/10 border border-white/20 text-white transition-all duration-300 hover:bg-white/20"
               >
                 <span className="flex items-center gap-2">
                   <Bell className="w-5 h-5" />
                   Subscribe for Updates
                 </span>
-              </Button>
+              </motion.button>
             </div>
 
             <div className="mt-12 pt-8 border-t border-white/10">
