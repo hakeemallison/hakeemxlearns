@@ -1,9 +1,22 @@
 /**
  * Carbon Design System Constants
  * Centralized design tokens for consistent styling across the application
+ *
+ * COLOR SYSTEM PHILOSOPHY:
+ * This design system uses white-based opacity for all application components
+ * to create a cohesive glassmorphism aesthetic over the carbon fiber background.
+ *
+ * DO: Use text-white, text-white/60, bg-white/10, border-white/20
+ * DON'T: Use semantic tokens like text-foreground, text-muted-foreground
+ *
+ * Exception: shadcn UI components in components/ui/ maintain semantic tokens
+ * for flexibility, but application components should use white-based opacity.
  */
 
-// Animation constants
+// ============================================================================
+// ANIMATION CONSTANTS
+// ============================================================================
+
 export const ANIMATIONS = {
   hover: { scale: 1.05 },
   tap: { scale: 0.95 },
@@ -17,7 +30,56 @@ export const DURATIONS = {
   slow: 700,
 } as const
 
-// Glass morphism styles
+// ============================================================================
+// COLOR SYSTEM - White-based Opacity
+// ============================================================================
+
+/**
+ * Standardized color opacity values for the glassmorphism design system.
+ * All application components should use these white-based opacity values.
+ */
+export const COLORS = {
+  // Text colors
+  text: {
+    primary: "text-white", // Main headings, important text
+    secondary: "text-white/60", // Body text, descriptions
+    muted: "text-white/40", // Subtle text, placeholders
+    disabled: "text-white/20", // Disabled state
+  },
+
+  // Background colors
+  background: {
+    glass: {
+      high: "bg-white/20", // Prominent glass elements
+      medium: "bg-white/10", // Standard glass cards
+      low: "bg-white/5", // Subtle glass overlays
+    },
+    solid: {
+      white: "bg-white", // Primary buttons
+      black: "bg-black", // Dark elements
+    },
+  },
+
+  // Border colors
+  border: {
+    default: "border-white/10", // Standard borders
+    hover: "border-white/20", // Hover state borders
+    active: "border-white/30", // Active/focused borders
+    subtle: "border-white/5", // Very subtle dividers
+  },
+
+  // Gradient colors (for glass effects)
+  gradient: {
+    glass: "from-white/10 to-white/5",
+    glassReverse: "from-white/5 to-white/10",
+    glassRadial: "from-white/15 via-white/10 to-white/5",
+  },
+} as const
+
+// ============================================================================
+// GLASS MORPHISM STYLES
+// ============================================================================
+
 export const GLASS_STYLES = {
   card: {
     base: "backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 shadow-2xl",
@@ -36,7 +98,10 @@ export const GLASS_STYLES = {
   },
 } as const
 
-// Border radius values
+// ============================================================================
+// BORDER RADIUS
+// ============================================================================
+
 export const RADIUS = {
   sm: "rounded-xl",
   md: "rounded-2xl",
@@ -46,7 +111,10 @@ export const RADIUS = {
   "3xl": "rounded-[32px]",
 } as const
 
-// Spacing values
+// ============================================================================
+// SPACING
+// ============================================================================
+
 export const SPACING = {
   section: {
     sm: "py-12 px-6",
@@ -62,7 +130,10 @@ export const SPACING = {
   },
 } as const
 
-// Typography
+// ============================================================================
+// TYPOGRAPHY
+// ============================================================================
+
 export const TYPOGRAPHY = {
   heading: {
     hero: "text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight",
@@ -74,35 +145,40 @@ export const TYPOGRAPHY = {
     base: "text-base md:text-lg",
     small: "text-sm md:text-base",
   },
-  colors: {
-    primary: "text-white",
-    secondary: "text-white/60",
-    muted: "text-white/40",
-  },
 } as const
 
-// Color opacity values
-export const OPACITY = {
-  glass: {
-    high: "white/20",
-    medium: "white/10",
-    low: "white/5",
-  },
-  text: {
-    primary: "white",
-    secondary: "white/60",
-    muted: "white/40",
-  },
-  border: {
-    default: "white/10",
-    hover: "white/20",
-    active: "white/30",
-  },
-} as const
+// ============================================================================
+// SHADOWS
+// ============================================================================
 
-// Shadow values
 export const SHADOWS = {
   card: "shadow-2xl",
   cardHover: "hover:shadow-white/5",
   button: "hover:shadow-lg hover:shadow-white/30",
 } as const
+
+// ============================================================================
+// UTILITY FUNCTIONS
+// ============================================================================
+
+/**
+ * Helper function to combine multiple design system classes
+ * @example cn(COLORS.text.primary, TYPOGRAPHY.heading.hero)
+ */
+export const combineStyles = (...styles: string[]) => styles.join(" ")
+
+/**
+ * Get complete glass card classes
+ * @param withHover - Include hover effects (default: true)
+ */
+export const getGlassCardClasses = (withHover = true) => {
+  return combineStyles(GLASS_STYLES.card.base, GLASS_STYLES.card.transition, withHover ? GLASS_STYLES.card.hover : "")
+}
+
+/**
+ * Get complete button classes
+ * @param variant - 'primary' or 'secondary'
+ */
+export const getButtonClasses = (variant: "primary" | "secondary" = "primary") => {
+  return combineStyles(GLASS_STYLES.button.base, GLASS_STYLES.button[variant])
+}
