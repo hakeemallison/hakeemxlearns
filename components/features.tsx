@@ -1,40 +1,42 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-
-import { Zap, Shield, Layers, Sparkles, Network, Cpu } from "lucide-react"
+import { Network, Video, FileText, GitBranch, Database, Cloud } from "lucide-react"
 import { useState } from "react"
 
 const features = [
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Built with performance in mind. Experience blazing fast load times and smooth interactions.",
-  },
-  {
-    icon: Shield,
-    title: "Secure & Reliable",
-    description: "Enterprise-grade security with 99.9% uptime. Your data is always protected.",
-  },
-  {
-    icon: Layers,
-    title: "Modular Design",
-    description: "Flexible components that adapt to your needs. Build exactly what you envision.",
-  },
-  {
-    icon: Sparkles,
-    title: "Premium Quality",
-    description: "Meticulously crafted details in every pixel. Designed for perfection.",
-  },
-  {
     icon: Network,
-    title: "Scalable System",
-    description: "Grows with your needs. From startup to enterprise, we've got you covered.",
+    title: "Systems Diagrams",
+    description:
+      "Comprehensive architecture diagrams breaking down complex distributed systems into understandable components.",
   },
   {
-    icon: Cpu,
-    title: "Smart Integration",
-    description: "Seamlessly connects with your existing tools and workflows.",
+    icon: Video,
+    title: "Video Tutorials",
+    description:
+      "In-depth video walkthroughs explaining system design patterns, trade-offs, and real-world implementations.",
+  },
+  {
+    icon: FileText,
+    title: "Technical Blogs",
+    description:
+      "Detailed articles covering solutions architecture, design patterns, and best practices from the field.",
+  },
+  {
+    icon: GitBranch,
+    title: "Design Patterns",
+    description: "Learn proven architectural patterns for scalability, reliability, and maintainability.",
+  },
+  {
+    icon: Database,
+    title: "Data Architecture",
+    description: "Deep dives into database design, data modeling, and storage solutions for modern applications.",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud Solutions",
+    description: "Explore cloud-native architectures, microservices, and distributed system design strategies.",
   },
 ]
 
@@ -46,11 +48,9 @@ export function Features() {
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-            Powerful features designed to elevate your experience
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Learn Through Multiple Formats</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            Simple, elegant, and built to last
+            Systems design content tailored for solutions architects and engineers
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export function Features() {
             size="lg"
             className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-sm bg-secondary/50 border-border transition-all duration-300 hover:bg-secondary hover:scale-105 hover:border-white/30"
           >
-            Explore All Features
+            Browse All Content
           </Button>
         </div>
       </div>
