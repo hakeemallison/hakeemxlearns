@@ -51,9 +51,8 @@ export function Showcase() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
 
-              {/* Category badge */}
               <div className="absolute top-6 left-6">
-                <span className="px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm text-background text-sm font-medium">
+                <span className="px-4 py-2 rounded-full bg-accent backdrop-blur-sm text-accent-foreground text-sm font-medium">
                   {projects[activeIndex].category}
                 </span>
               </div>
@@ -64,21 +63,20 @@ export function Showcase() {
               <h3 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{projects[activeIndex].title}</h3>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{projects[activeIndex].description}</p>
 
-              <Button className="group w-fit rounded-2xl px-6 py-6 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/30">
+              <Button className="group w-fit rounded-2xl px-6 py-6 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
                 <span className="flex items-center gap-2">
                   View Project
                   <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Button>
 
-              {/* Project navigation */}
               <div className="flex gap-3 mt-12 pt-8 border-t border-border/50">
                 {projects.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     className={`h-2 rounded-full transition-all duration-300 ${
-                      index === activeIndex ? "w-12 bg-white" : "w-2 bg-muted hover:bg-muted-foreground"
+                      index === activeIndex ? "w-12 bg-accent" : "w-2 bg-muted hover:bg-muted-foreground"
                     }`}
                     aria-label={`View project ${index + 1}`}
                   />
