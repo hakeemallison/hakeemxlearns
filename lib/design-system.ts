@@ -50,16 +50,16 @@ export const COLORS = {
   // Background colors - ULTRA TRANSPARENT for dramatic glassmorphism
   background: {
     glass: {
-      high: "bg-white/3", // Prominent glass elements (was 8)
-      medium: "bg-white/2", // Standard glass cards (was 5)
-      low: "bg-white/1", // Subtle glass overlays (was 3)
+      high: "bg-white/5", // Prominent glass elements (was 8)
+      medium: "bg-white/3", // Standard glass cards (was 5)
+      low: "bg-white/2", // Subtle glass overlays (was 3)
     },
     solid: {
       white: "bg-white", // Primary buttons
       black: "bg-black", // Dark elements
     },
     decorative: {
-      orb: "bg-white/1", // Floating decorative orbs
+      orb: "bg-white/2", // Floating decorative orbs
     },
   },
 
@@ -73,14 +73,14 @@ export const COLORS = {
 
   // Gradient colors (for glass effects)
   gradient: {
-    glass: "from-white/3 to-white/1", // Ultra transparent gradient
-    glassReverse: "from-white/1 to-white/3",
+    glass: "from-white/5 to-white/2", // Ultra transparent gradient
+    glassReverse: "from-white/2 to-white/5",
     glassRadial: "from-white/8 via-white/4 to-white/2",
   },
 
   // Hover states
   hover: {
-    glass: "hover:bg-white/6", // Glass element hover
+    glass: "hover:bg-white/8", // Glass element hover
     border: "hover:border-white/20", // Border hover
     indicator: "hover:bg-white/40", // Indicator hover (showcase dots)
   },
@@ -97,22 +97,22 @@ export const COLORS = {
 
 export const GLASS_STYLES = {
   card: {
-    base: "backdrop-blur-lg bg-gradient-to-br from-white/3 to-white/1 border border-white/10 shadow-2xl",
+    base: "backdrop-blur-lg bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl",
     hover: "hover:shadow-white/5 hover:scale-[1.02] hover:border-white/20",
     transition: "transition-all duration-500",
   },
   button: {
     primary: "bg-white text-black hover:bg-white/90 hover:shadow-lg hover:shadow-white/30",
-    secondary: "backdrop-blur-lg bg-white/3 border border-white/20 text-white hover:bg-white/6",
+    secondary: "backdrop-blur-lg bg-white/5 border border-white/20 text-white hover:bg-white/8",
     base: "rounded-2xl px-8 py-6 text-lg font-semibold transition-all duration-300",
   },
   iconContainer: {
-    base: "rounded-2xl bg-white/3 backdrop-blur-lg border border-white/20",
-    hover: "group-hover:bg-white/6 group-hover:scale-110",
+    base: "rounded-2xl bg-white/5 backdrop-blur-lg border border-white/20",
+    hover: "group-hover:bg-white/8 group-hover:scale-110",
     transition: "transition-all duration-500",
   },
   badge: {
-    base: "backdrop-blur-lg bg-white/2 border border-white/10",
+    base: "backdrop-blur-lg bg-white/3 border border-white/10",
     hover: "hover:bg-white/5 hover:scale-105",
   },
 } as const
