@@ -8,15 +8,15 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       {/* Floating orbs */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float" />
+      <div className="absolute top-20 left-10 w-64 h-64 bg-white/3 rounded-full blur-3xl animate-float" />
       <div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float"
         style={{ animationDelay: "1s" }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <GlassCard className="p-12 md:p-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 transition-all duration-300 hover:bg-white/20 hover:scale-105">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-8 transition-all duration-300 hover:bg-white/10 hover:scale-105">
             <BookOpen className="w-4 h-4 text-white" />
             <span className="text-sm font-medium text-white">Systems Design & Architecture</span>
           </div>

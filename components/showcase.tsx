@@ -48,14 +48,14 @@ export function Showcase() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
               <div className="absolute top-6 left-6">
-                <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium border border-white/20">
+                <span className="px-4 py-2 rounded-full bg-white/5 backdrop-blur-2xl text-white text-sm font-medium border border-white/10">
                   {projects[activeIndex].category}
                 </span>
               </div>
             </div>
 
             {/* Content side */}
-            <div className="p-8 md:p-12 flex flex-col justify-center bg-white/5">
+            <div className="p-8 md:p-12 flex flex-col justify-center bg-white/3">
               <h3 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-white">
                 {projects[activeIndex].title}
               </h3>
