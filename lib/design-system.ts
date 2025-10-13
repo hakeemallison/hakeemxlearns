@@ -98,7 +98,7 @@ export const COLORS = {
 export const GLASS_STYLES = {
   card: {
     base: "backdrop-blur-lg bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl",
-    hover: "hover:shadow-white/5 hover:scale-[1.02] hover:border-white/20",
+    hover: "hover:shadow-white/5 hover:border-white/20",
     transition: "transition-all duration-500",
   },
   button: {
