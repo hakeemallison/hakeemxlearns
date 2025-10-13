@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { GlassButton } from "@/components/ui/glass-button"
 import { SectionHeader } from "@/components/ui/section-header"
+import { COLORS, getBadgeClasses } from "@/lib/design-system"
 import type { ProjectItem } from "@/types/components"
 
 const projects: ProjectItem[] = [
@@ -48,18 +49,22 @@ export function Showcase() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
               <div className="absolute top-6 left-6">
-                <span className="px-4 py-2 rounded-full bg-white/5 backdrop-blur-2xl text-white text-sm font-medium border border-white/10">
+                <span
+                  className={`px-4 py-2 rounded-full ${getBadgeClasses(false)} ${COLORS.text.primary} text-sm font-medium`}
+                >
                   {projects[activeIndex].category}
                 </span>
               </div>
             </div>
 
             {/* Content side */}
-            <div className="p-8 md:p-12 flex flex-col justify-center bg-white/3">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-white">
+            <div className={`p-8 md:p-12 flex flex-col justify-center ${COLORS.background.glass.medium}`}>
+              <h3 className={`text-3xl md:text-4xl font-bold mb-4 text-balance ${COLORS.text.primary}`}>
                 {projects[activeIndex].title}
               </h3>
-              <p className="text-lg text-white/60 mb-8 leading-relaxed">{projects[activeIndex].description}</p>
+              <p className={`text-lg ${COLORS.text.secondary} mb-8 leading-relaxed`}>
+                {projects[activeIndex].description}
+              </p>
 
               <GlassButton variant="primary" className="w-fit">
                 <span className="flex items-center gap-2">
@@ -68,13 +73,15 @@ export function Showcase() {
                 </span>
               </GlassButton>
 
-              <div className="flex gap-3 mt-12 pt-8 border-t border-white/10">
+              <div className={`flex gap-3 mt-12 pt-8 border-t ${COLORS.border.default}`}>
                 {projects.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     className={`h-2 rounded-full transition-all duration-300 ${
-                      index === activeIndex ? "w-12 bg-white/60" : "w-2 bg-white/20 hover:bg-white/40"
+                      index === activeIndex
+                        ? `w-12 ${COLORS.active.indicator}`
+                        : `w-2 bg-white/20 ${COLORS.hover.indicator}`
                     }`}
                     aria-label={`View project ${index + 1}`}
                   />

@@ -1,9 +1,8 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
 import { Network, Video, FileText, GitBranch, Database, Cloud } from "lucide-react"
 import { FeatureCard } from "@/components/ui/feature-card"
 import { SectionHeader } from "@/components/ui/section-header"
+import { COLORS } from "@/lib/design-system"
 import type { FeatureItem } from "@/types/components"
 
 const features: FeatureItem[] = [
@@ -59,13 +58,11 @@ export function Features() {
 
         {/* Explore button */}
         <div className="flex justify-center">
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-sm bg-white/5 border-white/10 text-white transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:border-white/20"
+          <button
+            className={`rounded-2xl px-8 py-6 text-lg font-semibold backdrop-blur-2xl ${COLORS.background.glass.high} ${COLORS.border.default} border ${COLORS.text.primary} transition-all duration-300 ${COLORS.hover.glass} hover:scale-105 ${COLORS.hover.border}`}
           >
             Browse All Content
-          </Button>
+          </button>
         </div>
       </div>
     </section>

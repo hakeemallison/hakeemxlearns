@@ -6,8 +6,8 @@
  * This design system uses white-based opacity for all application components
  * to create a cohesive glassmorphism aesthetic over the carbon fiber background.
  *
- * DO: Use text-white, text-white/60, bg-white/10, border-white/20
- * DON'T: Use semantic tokens like text-foreground, text-muted-foreground
+ * DO: Use COLORS constants from this file
+ * DON'T: Use hardcoded values like text-white/60, bg-white/10
  *
  * Exception: shadcn UI components in components/ui/ maintain semantic tokens
  * for flexibility, but application components should use white-based opacity.
@@ -36,7 +36,7 @@ export const DURATIONS = {
 
 /**
  * Standardized color opacity values for the glassmorphism design system.
- * All application components should use these white-based opacity values.
+ * All application components MUST use these constants - NO HARDCODED VALUES.
  */
 export const COLORS = {
   // Text colors
@@ -47,16 +47,19 @@ export const COLORS = {
     disabled: "text-white/20", // Disabled state
   },
 
-  // Background colors
+  // Background colors - ULTRA TRANSPARENT for dramatic glassmorphism
   background: {
     glass: {
-      high: "bg-white/8", // Prominent glass elements
-      medium: "bg-white/5", // Standard glass cards
-      low: "bg-white/3", // Subtle glass overlays
+      high: "bg-white/5", // Prominent glass elements (was 8)
+      medium: "bg-white/3", // Standard glass cards (was 5)
+      low: "bg-white/2", // Subtle glass overlays (was 3)
     },
     solid: {
       white: "bg-white", // Primary buttons
       black: "bg-black", // Dark elements
+    },
+    decorative: {
+      orb: "bg-white/2", // Floating decorative orbs
     },
   },
 
@@ -70,9 +73,21 @@ export const COLORS = {
 
   // Gradient colors (for glass effects)
   gradient: {
-    glass: "from-white/8 to-white/3",
-    glassReverse: "from-white/3 to-white/8",
-    glassRadial: "from-white/10 via-white/6 to-white/3",
+    glass: "from-white/5 to-white/2", // Ultra transparent gradient
+    glassReverse: "from-white/2 to-white/5",
+    glassRadial: "from-white/8 via-white/4 to-white/2",
+  },
+
+  // Hover states
+  hover: {
+    glass: "hover:bg-white/8", // Glass element hover
+    border: "hover:border-white/20", // Border hover
+    indicator: "hover:bg-white/40", // Indicator hover (showcase dots)
+  },
+
+  // Active/Selected states
+  active: {
+    indicator: "bg-white/60", // Active indicator (showcase dots)
   },
 } as const
 
@@ -82,19 +97,23 @@ export const COLORS = {
 
 export const GLASS_STYLES = {
   card: {
-    base: "backdrop-blur-2xl bg-gradient-to-br from-white/8 to-white/3 border border-white/10 shadow-2xl",
+    base: "backdrop-blur-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl",
     hover: "hover:shadow-white/5 hover:scale-[1.02] hover:border-white/20",
     transition: "transition-all duration-500",
   },
   button: {
     primary: "bg-white text-black hover:bg-white/90 hover:shadow-lg hover:shadow-white/30",
-    secondary: "backdrop-blur-2xl bg-white/8 border border-white/20 text-white hover:bg-white/15",
+    secondary: "backdrop-blur-2xl bg-white/5 border border-white/20 text-white hover:bg-white/10",
     base: "rounded-2xl px-8 py-6 text-lg font-semibold transition-all duration-300",
   },
   iconContainer: {
-    base: "rounded-2xl bg-white/8 backdrop-blur-2xl border border-white/20",
-    hover: "group-hover:bg-white/15 group-hover:scale-110",
+    base: "rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/20",
+    hover: "group-hover:bg-white/10 group-hover:scale-110",
     transition: "transition-all duration-500",
+  },
+  badge: {
+    base: "backdrop-blur-2xl bg-white/3 border border-white/10",
+    hover: "hover:bg-white/8 hover:scale-105",
   },
 } as const
 
@@ -181,4 +200,12 @@ export const getGlassCardClasses = (withHover = true) => {
  */
 export const getButtonClasses = (variant: "primary" | "secondary" = "primary") => {
   return combineStyles(GLASS_STYLES.button.base, GLASS_STYLES.button[variant])
+}
+
+/**
+ * Get complete badge classes
+ * @param withHover - Include hover effects (default: true)
+ */
+export const getBadgeClasses = (withHover = true) => {
+  return combineStyles(GLASS_STYLES.badge.base, withHover ? GLASS_STYLES.badge.hover : "")
 }
