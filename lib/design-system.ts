@@ -50,9 +50,9 @@ export const COLORS = {
   // Background colors
   background: {
     glass: {
-      high: "bg-white/20", // Prominent glass elements
-      medium: "bg-white/10", // Standard glass cards
-      low: "bg-white/5", // Subtle glass overlays
+      high: "bg-white/8", // Prominent glass elements
+      medium: "bg-white/5", // Standard glass cards
+      low: "bg-white/3", // Subtle glass overlays
     },
     solid: {
       white: "bg-white", // Primary buttons
@@ -70,9 +70,9 @@ export const COLORS = {
 
   // Gradient colors (for glass effects)
   gradient: {
-    glass: "from-white/10 to-white/5",
-    glassReverse: "from-white/5 to-white/10",
-    glassRadial: "from-white/15 via-white/10 to-white/5",
+    glass: "from-white/8 to-white/3",
+    glassReverse: "from-white/3 to-white/8",
+    glassRadial: "from-white/10 via-white/6 to-white/3",
   },
 } as const
 
@@ -82,18 +82,18 @@ export const COLORS = {
 
 export const GLASS_STYLES = {
   card: {
-    base: "backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 shadow-2xl",
+    base: "backdrop-blur-2xl bg-gradient-to-br from-white/8 to-white/3 border border-white/10 shadow-2xl",
     hover: "hover:shadow-white/5 hover:scale-[1.02] hover:border-white/20",
     transition: "transition-all duration-500",
   },
   button: {
     primary: "bg-white text-black hover:bg-white/90 hover:shadow-lg hover:shadow-white/30",
-    secondary: "backdrop-blur-xl bg-white/10 border border-white/20 text-white hover:bg-white/20",
+    secondary: "backdrop-blur-2xl bg-white/8 border border-white/20 text-white hover:bg-white/15",
     base: "rounded-2xl px-8 py-6 text-lg font-semibold transition-all duration-300",
   },
   iconContainer: {
-    base: "rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20",
-    hover: "group-hover:bg-white/20 group-hover:scale-110",
+    base: "rounded-2xl bg-white/8 backdrop-blur-2xl border border-white/20",
+    hover: "group-hover:bg-white/15 group-hover:scale-110",
     transition: "transition-all duration-500",
   },
 } as const
