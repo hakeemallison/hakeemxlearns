@@ -20,7 +20,7 @@
 export const ANIMATIONS = {
   hover: { scale: 1.05 },
   tap: { scale: 0.95 },
-  cardHover: { scale: 1.02 },
+  cardHover: { scale: 1.01 }, // Reduced card hover scale from 1.02 (2%) to 1.01 (1%) for subtler effect
   iconHover: { scale: 1.1 },
 } as const
 
@@ -98,7 +98,7 @@ export const COLORS = {
 export const GLASS_STYLES = {
   card: {
     base: "backdrop-blur-lg bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl",
-    hover: "hover:shadow-white/5 hover:border-white/20",
+    hover: "hover:shadow-white/5 hover:scale-[1.01] hover:border-white/20", // Restored hover scale effect with smaller 1% increase
     transition: "transition-all duration-500",
   },
   button: {
