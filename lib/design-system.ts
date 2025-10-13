@@ -97,22 +97,22 @@ export const COLORS = {
 
 export const GLASS_STYLES = {
   card: {
-    base: "backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl",
-    hover: "hover:shadow-white/5 hover:scale-[1.01] hover:border-white/20", // Restored hover scale effect with smaller 1% increase
+    base: "backdrop-blur-[20px] bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl",
+    hover: "hover:shadow-white/5 hover:scale-[1.01] hover:border-white/20",
     transition: "transition-all duration-500",
   },
   button: {
     primary: "bg-white text-black hover:bg-white/90 hover:shadow-lg hover:shadow-white/30",
-    secondary: "backdrop-blur-xl bg-white/5 border border-white/20 text-white hover:bg-white/8",
+    secondary: "backdrop-blur-[20px] bg-white/5 border border-white/20 text-white hover:bg-white/8",
     base: "rounded-2xl px-8 py-6 text-lg font-semibold transition-all duration-300",
   },
   iconContainer: {
-    base: "rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20",
+    base: "rounded-2xl bg-white/5 backdrop-blur-[20px] border border-white/20",
     hover: "group-hover:bg-white/8 group-hover:scale-110",
     transition: "transition-all duration-500",
   },
   badge: {
-    base: "backdrop-blur-xl bg-white/3 border border-white/10",
+    base: "backdrop-blur-[20px] bg-white/3 border border-white/10",
     hover: "hover:bg-white/5 hover:scale-105",
   },
 } as const
