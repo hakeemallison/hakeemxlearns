@@ -1,0 +1,296 @@
+{
+  "designSystem": {
+    "name": "Carbon Black Glassmorphism",
+    "version": "1.0",
+    "theme": "dark",
+    "aesthetic": "glassmorphism",
+    "colors": {
+      "philosophy": "white-based opacity over carbon fiber background",
+      "text": {
+        "primary": "text-white",
+        "secondary": "text-white/60",
+        "muted": "text-white/40",
+        "disabled": "text-white/20"
+      },
+      "background": {
+        "glass": {
+          "high": "bg-white/5",
+          "medium": "bg-white/3",
+          "low": "bg-white/2"
+        },
+        "solid": {
+          "white": "bg-white",
+          "black": "bg-black"
+        },
+        "decorative": {
+          "orb": "bg-white/2"
+        }
+      },
+      "border": {
+        "default": "border-white/10",
+        "hover": "border-white/20",
+        "active": "border-white/30",
+        "subtle": "border-white/5"
+      },
+      "gradient": {
+        "glass": "from-white/5 to-white/2",
+        "glassReverse": "from-white/2 to-white/5",
+        "glassRadial": "from-white/8 via-white/4 to-white/2"
+      },
+      "interactive": {
+        "hoverGlass": "hover:bg-white/8",
+        "hoverBorder": "hover:border-white/20",
+        "hoverIndicator": "hover:bg-white/40",
+        "activeIndicator": "bg-white/60"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "sans": "Geist Sans",
+        "mono": "Geist Mono"
+      },
+      "fontWeights": {
+        "normal": 400,
+        "medium": 500,
+        "bold": 700
+      },
+      "baseFontSize": "16px",
+      "lineHeight": "1.5",
+      "headings": {
+        "hero": "text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight",
+        "section": "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight",
+        "card": "text-xl font-bold"
+      },
+      "body": {
+        "large": "text-xl md:text-2xl",
+        "base": "text-base md:text-lg",
+        "small": "text-sm md:text-base"
+      }
+    },
+    "spacing": {
+      "section": {
+        "sm": "py-12 px-6",
+        "md": "py-16 px-6",
+        "lg": "py-24 px-6",
+        "xl": "py-32 px-6"
+      },
+      "card": {
+        "sm": "p-6",
+        "md": "p-8",
+        "lg": "p-12",
+        "xl": "p-16"
+      },
+      "philosophy": "Use Tailwind spacing scale, not arbitrary values"
+    },
+    "borderRadius": {
+      "sm": "rounded-xl",
+      "md": "rounded-2xl",
+      "lg": "rounded-3xl",
+      "xl": "rounded-[2rem]",
+      "2xl": "rounded-[2.5rem]",
+      "3xl": "rounded-[32px]"
+    },
+    "shadows": {
+      "card": "shadow-2xl",
+      "cardHover": "hover:shadow-white/5",
+      "button": "hover:shadow-lg hover:shadow-white/30",
+      "philosophy": "Use white-tinted shadows for glass aesthetic"
+    },
+    "animations": {
+      "durations": {
+        "fast": "300ms",
+        "normal": "500ms",
+        "slow": "700ms"
+      },
+      "transforms": {
+        "hover": "scale-105",
+        "tap": "scale-95",
+        "cardHover": "scale-101",
+        "iconHover": "scale-110"
+      },
+      "library": "Framer Motion for complex animations"
+    },
+    "background": {
+      "baseColor": "#0a0a0a",
+      "description": "Carbon fiber grid pattern with subtle gradient",
+      "layers": [
+        "Dark carbon black base color",
+        "Horizontal grid lines at 0.03 opacity",
+        "Vertical grid lines at 0.03 opacity",
+        "Subtle vertical gradient from #0a0a0a to #151515"
+      ],
+      "attachment": "fixed (doesn't scroll)"
+    },
+    "components": {
+      "glassCard": {
+        "file": "components/ui/glass-card.tsx",
+        "base": "backdrop-blur-[20px] bg-gradient-to-br from-white/5 to-white/2 border border-white/10 shadow-2xl",
+        "hover": "hover:shadow-white/5 hover:scale-[1.01] hover:border-white/20",
+        "transition": "transition-all duration-500",
+        "props": {
+          "children": "ReactNode",
+          "className": "string (optional)",
+          "enableHover": "boolean (default: true)",
+          "rounded": "default | large | xl"
+        }
+      },
+      "glassButton": {
+        "file": "components/ui/glass-button.tsx",
+        "base": "rounded-2xl px-8 py-6 text-lg font-semibold",
+        "variants": {
+          "primary": "bg-white text-black hover:bg-white/90 hover:shadow-lg hover:shadow-white/30",
+          "secondary": "backdrop-blur-[20px] bg-white/5 border border-white/20 text-white hover:bg-white/8"
+        },
+        "animation": "Framer Motion: hover scale 1.05, tap scale 0.95",
+        "props": {
+          "children": "ReactNode",
+          "variant": "primary | secondary (default: primary)",
+          "className": "string (optional)",
+          "onClick": "function (optional)"
+        }
+      },
+      "featureCard": {
+        "file": "components/ui/feature-card.tsx",
+        "features": [
+          "Icon container with glass effect",
+          "Hover state with bottom line animation",
+          "Responsive scaling"
+        ],
+        "props": {
+          "icon": "LucideIcon",
+          "title": "string",
+          "description": "string"
+        }
+      },
+      "sectionHeader": {
+        "file": "components/ui/section-header.tsx",
+        "features": [
+          "Centered layout",
+          "Title with text-balance",
+          "Optional subtitle"
+        ],
+        "props": {
+          "title": "string",
+          "subtitle": "string (optional)",
+          "className": "string (optional)"
+        }
+      }
+    },
+    "cssCustomProperties": {
+      "light": {
+        "--background": "#ffffff",
+        "--foreground": "#030213",
+        "--primary": "#030213",
+        "--accent": "#e9ebef",
+        "--border": "rgba(0, 0, 0, 0.1)"
+      },
+      "dark": {
+        "--background": "#0a0a0a",
+        "--foreground": "#ffffff",
+        "--primary": "#ffffff",
+        "--accent": "#2a2a3e",
+        "--border": "#333333"
+      }
+    },
+    "dependencies": {
+      "framework": {
+        "next": "15.2.4",
+        "react": "^19",
+        "react-dom": "^19"
+      },
+      "styling": {
+        "tailwindcss": "^4.1.9",
+        "postcss": "^8.5"
+      },
+      "animation": {
+        "framer-motion": "latest"
+      },
+      "ui": {
+        "geist": "latest",
+        "lucide-react": "^0.454.0"
+      },
+      "utilities": {
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^2.5.5"
+      }
+    },
+    "bestPractices": {
+      "do": [
+        "Use COLORS constants from lib/design-system.ts",
+        "Use Tailwind spacing scale (p-4, gap-4) instead of arbitrary values",
+        "Apply hover/active states using motion components",
+        "Use semantic text classes (text-white/60, not hardcoded)",
+        "Keep components small and composable",
+        "Test mobile responsiveness"
+      ],
+      "dont": [
+        "Hardcode color values like bg-white/10 or text-white/60",
+        "Use arbitrary Tailwind values [16px] when scale exists",
+        "Mix margin and gap classes on the same element",
+        "Forget to add alt text to images",
+        "Use decorative images without GenerateImage",
+        "Apply hover animations without transition classes"
+      ]
+    },
+    "fileStructure": {
+      "app": {
+        "globals.css": "Global styles + CSS variables",
+        "layout.tsx": "Root layout with fonts",
+        "page.tsx": "Home page"
+      },
+      "components": {
+        "ui": [
+          "glass-card.tsx",
+          "glass-button.tsx",
+          "feature-card.tsx",
+          "section-header.tsx"
+        ],
+        "other": [
+          "hero.tsx",
+          "features.tsx",
+          "showcase.tsx",
+          "cta.tsx",
+          "theme-provider.tsx"
+        ]
+      },
+      "lib": [
+        "design-system.ts",
+        "utils.ts"
+      ],
+      "types": [
+        "components.ts"
+      ]
+    },
+    "replicationSteps": [
+      "Initialize Next.js 15+ project with App Router",
+      "Install Tailwind CSS 4+",
+      "Install all dependencies from package.json",
+      "Copy tailwind.config.js settings",
+      "Copy font configuration from layout.tsx (Geist Sans/Mono)",
+      "Copy app/globals.css with CSS variables and background texture",
+      "Create lib/design-system.ts with all constants",
+      "Copy lib/utils.ts and types/components.ts",
+      "Copy all components from components/ui/",
+      "Test all components render correctly",
+      "Verify hover animations work",
+      "Check responsive behavior"
+    ],
+    "accessibility": {
+      "requirements": [
+        "Use semantic HTML (main, header, nav, section)",
+        "Add ARIA labels and roles",
+        "Ensure text contrast meets WCAG AA standards",
+        "Use sr-only class for screen reader only text"
+      ]
+    },
+    "performance": {
+      "optimizations": [
+        "Use Next.js Image component for images",
+        "Implement lazy loading for off-screen content",
+        "Minimize animations on mobile devices",
+        "Use CSS variables for theme switching (no JS re-renders)"
+      ]
+    }
+  }
+}
